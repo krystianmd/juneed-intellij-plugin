@@ -1,4 +1,4 @@
-package com.github.krystianmd.juneedintellijplugin.listeners
+package com.madrakrystian.juneed.listeners
 
 import com.intellij.ide.FrameStateListener
 import com.intellij.openapi.diagnostic.thisLogger

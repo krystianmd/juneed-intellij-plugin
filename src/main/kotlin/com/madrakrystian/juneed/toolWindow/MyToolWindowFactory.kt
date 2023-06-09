@@ -1,4 +1,4 @@
-package com.github.krystianmd.juneedintellijplugin.toolWindow
+package com.madrakrystian.juneed.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.krystianmd.juneedintellijplugin.MyBundle
-import com.github.krystianmd.juneedintellijplugin.services.MyProjectService
+import com.madrakrystian.juneed.MyBundle
+import com.madrakrystian.juneed.services.MyProjectService
 import javax.swing.JButton
 
 

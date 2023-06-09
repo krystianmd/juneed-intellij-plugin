@@ -1,4 +1,4 @@
-package com.github.krystianmd.juneedintellijplugin
+package com.madrakrystian.juneed
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
