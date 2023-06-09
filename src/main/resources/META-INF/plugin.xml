@@ -6,5 +6,11 @@
 
     <depends>com.intellij.modules.platform</depends>
 
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- LIVE TEMPLATES -->
+        <defaultLiveTemplates file="/liveTemplates/Assertions.xml"/>
+        <defaultLiveTemplates file="/liveTemplates/FluentAssertions.xml"/>
+    </extensions>
+
     <resource-bundle>messages.MyBundle</resource-bundle>
 </idea-plugin>
