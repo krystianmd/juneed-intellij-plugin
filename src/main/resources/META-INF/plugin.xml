@@ -9,6 +9,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- LIVE TEMPLATES -->
+        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.JavaTestCodeContext"/>
         <defaultLiveTemplates file="/liveTemplates/Assertions.xml"/>
         <defaultLiveTemplates file="/liveTemplates/FluentAssertions.xml"/>
     </extensions>
