@@ -4,35 +4,40 @@
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="EXPECTED" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fast" value="org.assertj.core.api.Assertions.assertThat($ACTUAL$).isTrue();$END$"
               description="assertThat # is true" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fasf" value="org.assertj.core.api.Assertions.assertThat($ACTUAL$).isFalse();$END$"
               description="assertThat # is false" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fasn" value="org.assertj.core.api.Assertions.assertThat($ACTUAL$).isNull();$END$"
               description="assertThat # is null" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fasnn" value="org.assertj.core.api.Assertions.assertThat($ACTUAL$).isNotNull();$END$"
               description="assertThat # is not null" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fasth"
@@ -43,7 +48,8 @@
         <variable name="EXEC" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fasAny"
@@ -52,7 +58,8 @@
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="ELEMENT" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="fasAll"
@@ -61,7 +68,8 @@
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="ELEMENT" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
 </templateSet>

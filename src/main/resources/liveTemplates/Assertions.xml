@@ -4,7 +4,8 @@
               description="assertAll assertion" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="ase" value="org.junit.jupiter.api.Assertions.assertEquals($EXPECTED$, $ACTUAL$);$END$"
@@ -12,7 +13,8 @@
         <variable name="EXPECTED" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="asf"
@@ -21,21 +23,24 @@
         <variable name="CONDITION" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="asn" value="org.junit.jupiter.api.Assertions.assertNull($OBJ$);$END$"
               description="assertNull assertion" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="OBJ" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="asnn" value="org.junit.jupiter.api.Assertions.assertNotNull($OBJ$);$END$"
               description="assertNotNull assertion" toReformat="true" toShortenFQNames="true" useStaticImport="true">
         <variable name="OBJ" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="ast"
@@ -44,7 +49,8 @@
         <variable name="CONDITION" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="asth"
@@ -54,7 +60,8 @@
         <variable name="EXEC" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="MSG" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
     <template name="asti"
@@ -63,7 +70,8 @@
         <variable name="MIL" expression="" defaultValue="" alwaysStopAt="true"/>
         <variable name="EXEC" expression="" defaultValue="" alwaysStopAt="true"/>
         <context>
-            <option name="JAVA_TEST_CODE" value="true"/>
+            <option name="JAVA_TEST" value="true"/>
+            <option name="KOTLIN_TEST" value="true"/>
         </context>
     </template>
 </templateSet>
