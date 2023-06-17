@@ -16,5 +16,5 @@
         <defaultLiveTemplates file="/liveTemplates/FluentAssertions.xml"/>
     </extensions>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <resource-bundle>messages.ResourceBundle</resource-bundle>
 </idea-plugin>

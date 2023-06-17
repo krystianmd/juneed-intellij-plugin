@@ -8,6 +8,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiWhiteSpace
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.psi.util.PsiUtilCore.getLanguageAtOffset
+import com.madrakrystian.juneed.ResourceBundle
 import com.siyeh.ig.psiutils.TestUtils.isPartOfJUnitTestMethod
 import com.siyeh.ig.psiutils.TestUtils.isJUnitTestMethod
 import org.jetbrains.kotlin.asJava.toLightMethods
@@ -36,11 +37,11 @@ abstract class TestContextType(id: String, presentableName: String, private val 
     private fun TemplateActionContext.startOffsetElement() = file.findElementAt(startOffset)
 }
 
-class JavaTestContextType : TestContextType("JAVA_TEST", "Java test", JavaLanguage.INSTANCE) {
+class JavaTestContextType : TestContextType("JAVA_TEST", ResourceBundle.message("template.context.name.java"), JavaLanguage.INSTANCE) {
     override fun isPartOfTest(element: PsiElement) = isPartOfJUnitTestMethod(element)
 }
 
-class KotlinTestContextType : TestContextType("KOTLIN_TEST", "Kotlin test", KotlinLanguage.INSTANCE) {
+class KotlinTestContextType : TestContextType("KOTLIN_TEST", ResourceBundle.message("template.context.name.kotlin"), KotlinLanguage.INSTANCE) {
     override fun isPartOfTest(element: PsiElement): Boolean {
         return PsiTreeUtil.getParentOfType(element, KtNamedFunction::class.java)
                 ?.takeUnless { it.isTopLevel }
