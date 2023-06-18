@@ -28,13 +28,13 @@ abstract class TestContextType(private val language: SupportedLanguage) : Templa
         } else false
     }
 
+    private fun TemplateActionContext.isOfLanguage(language: Language) = getLanguageAtOffset(file, startOffset).isKindOf(language)
+    private fun TemplateActionContext.startOffsetElement() = file.findElementAt(startOffset)
+
     /**
      * Should check if given {@see PsiElement} is part of JUnit test.
      */
     abstract fun isPartOfTest(element: PsiElement): Boolean
-
-    private fun TemplateActionContext.isOfLanguage(language: Language) = getLanguageAtOffset(file, startOffset).isKindOf(language)
-    private fun TemplateActionContext.startOffsetElement() = file.findElementAt(startOffset)
 }
 
 class JavaTestContextType : TestContextType(JAVA) {
