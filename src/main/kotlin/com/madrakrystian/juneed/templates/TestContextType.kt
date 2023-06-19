@@ -7,9 +7,9 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiWhiteSpace
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.psi.util.PsiUtilCore.getLanguageAtOffset
-import com.madrakrystian.juneed.SupportedLanguage
-import com.madrakrystian.juneed.SupportedLanguage.JAVA
-import com.madrakrystian.juneed.SupportedLanguage.KOTLIN
+import com.madrakrystian.juneed.PluginSupportedLanguage
+import com.madrakrystian.juneed.PluginSupportedLanguage.JAVA
+import com.madrakrystian.juneed.PluginSupportedLanguage.KOTLIN
 import com.siyeh.ig.psiutils.TestUtils.isPartOfJUnitTestMethod
 import com.siyeh.ig.psiutils.TestUtils.isJUnitTestMethod
 import org.jetbrains.kotlin.asJava.toLightMethods
@@ -18,7 +18,7 @@ import org.jetbrains.kotlin.psi.KtNamedFunction
 /**
  * Provides context for assertions and fluent assertions in live templates based on language.
  */
-abstract class TestContextType(private val language: SupportedLanguage) : TemplateContextType(language.templateContextId, language.templatePresentableName) {
+abstract class TestContextType(private val language: PluginSupportedLanguage) : TemplateContextType(language.templateContext.id, language.templateContext.presentableName) {
 
     final override fun isInContext(templateActionContext: TemplateActionContext) = templateActionContext.run {
         if (isOfLanguage(language.value)) {
