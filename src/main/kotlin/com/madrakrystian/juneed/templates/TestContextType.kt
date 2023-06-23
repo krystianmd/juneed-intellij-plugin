@@ -7,9 +7,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiWhiteSpace
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.psi.util.PsiUtilCore.getLanguageAtOffset
-import com.madrakrystian.juneed.PluginSupportedLanguage
-import com.madrakrystian.juneed.PluginSupportedLanguage.JAVA
-import com.madrakrystian.juneed.PluginSupportedLanguage.KOTLIN
+import com.madrakrystian.juneed.PluginLanguageConfiguration
 import com.siyeh.ig.psiutils.TestUtils.isPartOfJUnitTestMethod
 import com.siyeh.ig.psiutils.TestUtils.isJUnitTestMethod
 import org.jetbrains.kotlin.asJava.toLightMethods
@@ -18,18 +16,17 @@ import org.jetbrains.kotlin.psi.KtNamedFunction
 /**
  * Provides context for assertions and fluent assertions in live templates based on language.
  */
-abstract class TestContextType(private val language: PluginSupportedLanguage) : TemplateContextType(language.templateContext.id, language.templateContext.presentableName) {
+abstract class TestContextType(private val configuration: PluginLanguageConfiguration) : TemplateContextType(configuration.templateContext.id, configuration.templateContext.presentableName) {
 
     final override fun isInContext(templateActionContext: TemplateActionContext) = templateActionContext.run {
-        if (isOfLanguage(language.value)) {
-            startOffsetElement()
-                    ?.takeUnless { it is PsiWhiteSpace }
-                    ?.let { isPartOfTest(it) } ?: false
+        if (isOfLanguage(configuration.language)) {
+            startOffsetElement()?.let { isPartOfTest(it) } ?: false
         } else false
     }
 
     private fun TemplateActionContext.isOfLanguage(language: Language) = getLanguageAtOffset(file, startOffset).isKindOf(language)
     private fun TemplateActionContext.startOffsetElement() = file.findElementAt(startOffset)
+            .takeUnless { it is PsiWhiteSpace }
 
     /**
      * Should check if given {@see PsiElement} is part of JUnit test.
@@ -37,11 +34,11 @@ abstract class TestContextType(private val language: PluginSupportedLanguage) : 
     abstract fun isPartOfTest(element: PsiElement): Boolean
 }
 
-class JavaTestContextType : TestContextType(JAVA) {
-    override fun isPartOfTest(element: PsiElement) = isPartOfJUnitTestMethod(element)
+private class JavaTestContextType : TestContextType(PluginLanguageConfiguration.JAVA) {
+    override fun isPartOfTest(element: PsiElement): Boolean = isPartOfJUnitTestMethod(element)
 }
 
-class KotlinTestContextType : TestContextType(KOTLIN) {
+private class KotlinTestContextType : TestContextType(PluginLanguageConfiguration.KOTLIN) {
     override fun isPartOfTest(element: PsiElement): Boolean {
         return PsiTreeUtil.getParentOfType(element, KtNamedFunction::class.java)
                 ?.takeUnless { it.isTopLevel }
