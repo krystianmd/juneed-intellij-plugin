@@ -16,7 +16,7 @@ import org.jetbrains.kotlin.psi.KtNamedFunction
 /**
  * Provides context for assertions and fluent assertions in live templates based on language.
  */
-abstract class TestContextType(private val configuration: PluginLanguageConfiguration) : TemplateContextType(configuration.templateContext.id, configuration.templateContext.presentableName) {
+sealed class TestContextType(private val configuration: PluginLanguageConfiguration) : TemplateContextType(configuration.templateContext.id, configuration.templateContext.presentableName) {
 
     final override fun isInContext(templateActionContext: TemplateActionContext) = templateActionContext.run {
         if (isOfLanguage(configuration.language)) {
