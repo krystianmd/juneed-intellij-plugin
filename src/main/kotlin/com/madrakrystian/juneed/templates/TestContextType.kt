@@ -5,13 +5,13 @@ import com.intellij.codeInsight.template.TemplateContextType
 import com.intellij.lang.Language
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiWhiteSpace
-import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.psi.util.PsiUtilCore.getLanguageAtOffset
 import com.madrakrystian.juneed.PluginLanguageConfiguration
 import com.siyeh.ig.psiutils.TestUtils.isPartOfJUnitTestMethod
 import com.siyeh.ig.psiutils.TestUtils.isJUnitTestMethod
 import org.jetbrains.kotlin.asJava.toLightMethods
 import org.jetbrains.kotlin.psi.KtNamedFunction
+import org.jetbrains.kotlin.psi.psiUtil.getStrictParentOfType
 
 /**
  * Provides context for assertions and fluent assertions in live templates based on language.
@@ -39,11 +39,10 @@ private class JavaTestContextType : TestContextType(PluginLanguageConfiguration.
 }
 
 private class KotlinTestContextType : TestContextType(PluginLanguageConfiguration.KOTLIN) {
-    override fun isPartOfTest(element: PsiElement): Boolean {
-        return PsiTreeUtil.getParentOfType(element, KtNamedFunction::class.java)
-                ?.takeUnless { it.isTopLevel }
-                ?.toLightMethods()
-                ?.firstOrNull()
-                ?.let { isJUnitTestMethod(it) } ?: false
-    }
+    override fun isPartOfTest(element: PsiElement): Boolean =
+            element.getStrictParentOfType<KtNamedFunction>()
+                    ?.takeUnless { it.isTopLevel }
+                    ?.toLightMethods()
+                    ?.firstOrNull()
+                    ?.let { isJUnitTestMethod(it) } ?: false
 }
