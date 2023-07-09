@@ -1,6 +1,6 @@
 package com.madrakrystian.juneed.actions
 
-internal class JavaParametrizedTestActionGroup : BaseParametrizedTestActionGroup(
+internal class JavaParametrizedTestActionGroup : BaseParametrizedTestActionGroup<JavaBaseGenerateParametrizedTestAction>(
     arrayOf(
         GenerateParameterizedTestWithIntsSourceAction,
         GenerateParameterizedTestWithStringsSourceAction,
