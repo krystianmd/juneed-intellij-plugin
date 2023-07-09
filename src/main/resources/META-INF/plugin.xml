@@ -10,8 +10,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- LIVE TEMPLATES -->
-        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.JavaTestContextType"/>
-        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.KotlinTestContextType"/>
+        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.context.JavaTestContextType"/>
+        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.context.KotlinTestContextType"/>
         <defaultLiveTemplates file="/liveTemplates/Assertions.xml"/>
         <defaultLiveTemplates file="/liveTemplates/FluentAssertions.xml"/>
     </extensions>
