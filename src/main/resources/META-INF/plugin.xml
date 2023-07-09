@@ -10,11 +10,18 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- LIVE TEMPLATES -->
-        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.context.JavaTestContextType"/>
-        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.context.KotlinTestContextType"/>
+        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.contexts.JavaTestContextType"/>
+        <liveTemplateContext implementation="com.madrakrystian.juneed.templates.contexts.KotlinTestContextType"/>
         <defaultLiveTemplates file="/liveTemplates/Assertions.xml"/>
         <defaultLiveTemplates file="/liveTemplates/FluentAssertions.xml"/>
     </extensions>
+
+    <actions>
+        <group id="JavaParametrizedTestGenerateGroup" text="Parametrized Test Method..." popup="true"
+               class="com.madrakrystian.juneed.actions.JavaParametrizedTestActionGroup">
+            <add-to-group group-id="JavaGenerateGroup1" anchor="after" relative-to-action="GenerateTestMethod"/>
+        </group>
+    </actions>
 
     <resource-bundle>messages.ResourceBundle</resource-bundle>
 </idea-plugin>
