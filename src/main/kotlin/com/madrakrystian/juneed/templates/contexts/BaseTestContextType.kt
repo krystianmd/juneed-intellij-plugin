@@ -1,4 +1,4 @@
-package com.madrakrystian.juneed.templates.context
+package com.madrakrystian.juneed.templates.contexts
 
 import com.intellij.codeInsight.template.TemplateActionContext
 import com.intellij.codeInsight.template.TemplateContextType
@@ -10,7 +10,7 @@ import com.madrakrystian.juneed.PluginLanguageConfiguration
 /**
  * Provides context for assertions and fluent assertions in live templates based on language.
  */
-sealed class TemplateTestContextType(
+sealed class BaseTestContextType(
     private val configuration: PluginLanguageConfiguration
 ) : TemplateContextType(configuration.templateContext.id, configuration.templateContext.presentableName) {
 
