@@ -1,4 +1,4 @@
 @org.junit.jupiter.params.ParameterizedTest
 @org.junit.jupiter.params.provider.CsvSource("${CSV}")
-fun ${NAME}(${CSV_PARAM}, ${ANOTHER_CSV_PARAM}) {
+fun ${NAME}(${CSV_PARAMS}) {
 }
